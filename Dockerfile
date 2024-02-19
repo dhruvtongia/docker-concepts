@@ -1,6 +1,7 @@
-FROM node:20
+FROM node:hydrogen-alpine3.19
 WORKDIR = /usr/src/app
-COPY . . 
+COPY ./package* . 
 RUN npm install
+COPY . .
 EXPOSE 3000
 CMD ["npm", "run", "dev"]
